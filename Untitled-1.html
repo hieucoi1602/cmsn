@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chúc Mừng Sinh Nhật Em ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+
+            font-family: Arial, sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff758c,
+                    #ff7eb3,
+                    #a18cd1
+                );
+
+            color: white;
+        }
+
+
+        /* =========================
+           MÀN HÌNH BAN ĐẦU
+        ========================= */
+
+        .welcome {
+            width: 100%;
+            height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 20px;
+
+            animation: fadeIn 1.5s ease;
+        }
+
+
+        /* ẢNH */
+
+        .birthday-image {
+            width: 230px;
+            height: 230px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid white;
+
+            box-shadow:
+                0 0 15px rgba(255,255,255,0.9),
+                0 0 30px rgba(255,100,160,0.8),
+                0 0 60px rgba(255,100,160,0.5);
+
+            margin-bottom: 30px;
+
+            animation: imagePulse 2s infinite;
+        }
+
+
+        /* TIÊU ĐỀ */
+
+        .welcome h1 {
+            font-size: clamp(28px, 7vw, 60px);
+
+            margin-bottom: 35px;
+
+            text-shadow:
+                0 0 10px rgba(255,255,255,0.8),
+                0 0 20px rgba(255,100,160,0.8);
+
+            animation: pulse 2s infinite;
+        }
+
+
+        /* NÚT START */
+
+        .start-btn {
+            padding: 15px 50px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background: white;
+
+            color: #ff4f81;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.25);
+
+            transition: 0.3s;
+        }
+
+
+        .start-btn:hover {
+            transform: scale(1.1);
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,0.35);
+        }
+
+
+        .start-btn:active {
+            transform: scale(0.95);
+        }
+
+
+        /* =========================
+           PHẦN LỜI CHÚC
+        ========================= */
+
+        .messages {
+            display: none;
+
+            width: 100%;
+            height: 100vh;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+
+        .message {
+            display: none;
+
+            max-width: 900px;
+
+            font-size: clamp(25px, 6vw, 50px);
+
+            font-weight: bold;
+
+            line-height: 1.5;
+
+            text-shadow:
+                0 0 10px rgba(0,0,0,0.25),
+                0 0 20px rgba(255,255,255,0.3);
+
+            animation: messageAppear 1.5s ease;
+        }
+
+
+        /* =========================
+           CÂU CUỐI
+        ========================= */
+
+        .final-message {
+            font-size: clamp(45px, 10vw, 100px);
+
+            color: white;
+
+            text-shadow:
+                0 0 10px white,
+                0 0 25px #ff4f81,
+                0 0 50px #ff4f81,
+                0 0 80px #ff4f81;
+
+            animation:
+                finalAppear 2s ease,
+                finalPulse 2s infinite 2s;
+        }
+
+
+        /* =========================
+           TRÁI TIM BAY
+        ========================= */
+
+        .heart {
+            position: fixed;
+
+            bottom: -30px;
+
+            pointer-events: none;
+
+            animation: fly 5s linear forwards;
+
+            z-index: 10;
+        }
+
+
+        /* =========================
+           HIỆU ỨNG
+        ========================= */
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+
+        @keyframes imagePulse {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+        }
+
+
+        @keyframes pulse {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.03);
+            }
+
+        }
+
+
+        @keyframes messageAppear {
+
+            0% {
+                opacity: 0;
+                transform:
+                    scale(0.5)
+                    translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform:
+                    scale(1)
+                    translateY(0);
+            }
+
+        }
+
+
+        @keyframes finalAppear {
+
+            0% {
+                opacity: 0;
+                transform: scale(0.2);
+            }
+
+            70% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+
+        @keyframes finalPulse {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+        }
+
+
+        @keyframes fly {
+
+            0% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+
+        }
+
+
+        /* =========================
+           ĐIỆN THOẠI
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .birthday-image {
+                width: 180px;
+                height: 180px;
+
+                margin-bottom: 25px;
+            }
+
+            .welcome h1 {
+                font-size: 30px;
+
+                margin-bottom: 30px;
+            }
+
+            .start-btn {
+                font-size: 18px;
+
+                padding: 13px 40px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         MÀN HÌNH ĐẦU TIÊN
+    ================================== -->
+
+    <div class="welcome" id="welcome">
+
+        <!-- THAY "anh.jpg" BẰNG TÊN ẢNH CỦA BẠN -->
+
+        <img
+            src="c:\Users\Administrator\Documents\anh.jpg"
+            class="birthday-image"
+            alt="Ảnh sinh nhật"
+        >
+
+
+        <h1>
+            CHÚC MỪNG SINH NHẬT EM ❤️
+        </h1>
+
+
+        <button
+            class="start-btn"
+            onclick="startBirthday()"
+        >
+            START
+        </button>
+
+    </div>
+
+
+
+    <!-- =================================
+         CÁC LỜI CHÚC
+    ================================== -->
+
+    <div class="messages" id="messages">
+
+
+        <div class="message">
+            Chúc mừng sinh nhật em 🎂❤️
+        </div>
+
+
+        <div class="message">
+            Chúc em thật nhiều sức khỏe 🌷
+        </div>
+
+
+        <div class="message">
+            Sớm đạt được thành công mà em mong muốn ✨
+        </div>
+
+
+        <div class="message">
+            Dù khó khăn thế nào hãy cố gắng vượt qua 💪❤️
+        </div>
+
+
+        <div class="message">
+            Anh ở xa vẫn theo dõi em trên con đường hướng tới thành công ❤️
+        </div>
+
+
+        <!-- CÂU CUỐI -->
+
+        <div class="message final-message">
+            Cảm ơn em vì tất cả ❤️
+        </div>
+
+
+    </div>
+
+
+
+    <script>
+
+        /* =================================
+           LẤY CÁC PHẦN TỬ
+        ================================== */
+
+        const welcome =
+            document.getElementById("welcome");
+
+        const messagesBox =
+            document.getElementById("messages");
+
+        const messages =
+            document.querySelectorAll(".message");
+
+
+        let current = 0;
+
+
+
+        /* =================================
+           BẮT ĐẦU
+        ================================== */
+
+        function startBirthday() {
+
+            /*
+             * Ẩn màn hình đầu tiên
+             */
+
+            welcome.style.display = "none";
+
+
+            /*
+             * Hiện phần lời chúc
+             */
+
+            messagesBox.style.display = "flex";
+
+
+            /*
+             * Bắt đầu chạy lời chúc
+             */
+
+            showNextMessage();
+
+
+            /*
+             * Bắt đầu tạo trái tim
+             */
+
+            setInterval(createHeart, 400);
+
+        }
+
+
+
+        /* =================================
+           HIỂN THỊ TỪNG LỜI CHÚC
+        ================================== */
+
+        function showNextMessage() {
+
+
+            /*
+             * Ẩn tất cả lời chúc
+             */
+
+            messages.forEach(function(message) {
+
+                message.style.display = "none";
+
+            });
+
+
+            /*
+             * Hiện lời chúc hiện tại
+             */
+
+            messages[current].style.display = "block";
+
+
+            /*
+             * Nếu chưa phải câu cuối
+             */
+
+            if (current < messages.length - 1) {
+
+                current++;
+
+
+                /*
+                 * Mỗi câu hiển thị 3.5 giây
+                 */
+
+                setTimeout(
+                    showNextMessage,
+                    3500
+                );
+
+            }
+
+        }
+
+
+
+        /* =================================
+           TẠO TRÁI TIM BAY
+        ================================== */
+
+        function createHeart() {
+
+            const heart =
+                document.createElement("div");
+
+
+            heart.classList.add("heart");
+
+
+            const heartList = [
+                "❤️",
+                "💖",
+                "💕",
+                "💗",
+                "💓",
+                "💘",
+                "💝"
+            ];
+
+
+            /*
+             * Chọn ngẫu nhiên một loại tim
+             */
+
+            heart.innerHTML =
+                heartList[
+                    Math.floor(
+                        Math.random() *
+                        heartList.length
+                    )
+                ];
+
+
+            /*
+             * Vị trí ngang ngẫu nhiên
+             */
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+
+            /*
+             * Kích thước ngẫu nhiên
+             */
+
+            heart.style.fontSize =
+                (15 + Math.random() * 30) + "px";
+
+
+            /*
+             * Tốc độ bay ngẫu nhiên
+             */
+
+            heart.style.animationDuration =
+                (3 + Math.random() * 4) + "s";
+
+
+            document.body.appendChild(heart);
+
+
+            /*
+             * Xóa tim sau khi bay xong
+             */
+
+            setTimeout(function() {
+
+                heart.remove();
+
+            }, 7000);
+
+        }
+
+    </script>
+
+</body>
+</html>
